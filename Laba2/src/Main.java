@@ -29,7 +29,7 @@ public class Main {
             Tea[] tea = new Tea[numObj1];
             for (int i = 0; i < numObj1; i++) {
                 tea[i] = new Tea();
-                tea[i].update();
+                tea[i].create();
                 tea[i].read();
             }
             System.out.println("\nКол-во товара:"+ product.CounterObject + "\n1.Оформить заказ\n2.Выход");
@@ -44,10 +44,6 @@ public class Main {
             } else {
                 return;
             }
-
-
-
-
 //            Order order = new Order();
 //
 //            LinkedList<Order> Orders = new LinkedList<Order>();
