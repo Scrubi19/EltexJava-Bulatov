@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Main {
 
@@ -48,6 +46,34 @@ public class Main {
                 Orders orders = new Orders();
                 orders.offer(cart, user);
                 orders.show();
+                orders.checkTime();
+                System.out.println("Проверка: " + cart.isExistsUUID(tea[0].getUUID()));
+            } else {
+                return;
+            }
+        }
+        if (choice == 2) {
+            System.out.println("Сколько кофе желаете?");
+            int numObj2 = sc.nextInt();
+            Coffee[] coffee = new Coffee[numObj2];
+            for (int i = 0; i < numObj2; i++) {
+                coffee[i] = new Coffee();
+                coffee[i].create();
+                coffee[i].read();
+            }
+            ShoppingCart cart = new ShoppingCart();
+            for (int i = 0; i < numObj2; i++) {
+                cart.add(coffee[i]);
+            }
+            System.out.println("\nКол-во товара:"+ Product.CounterObject);
+            System.out.println("\n1.Оформить заказ\n2.Выход");
+            int choice2 = sc.nextInt();
+            if (choice2 == 1) {
+                Orders orders = new Orders();
+                orders.offer(cart, user);
+                orders.show();
+                orders.checkTime();
+                System.out.println("Проверка: " + cart.isExistsUUID(coffee[0].getUUID()));
             } else {
                 return;
             }

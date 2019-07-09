@@ -22,6 +22,7 @@ public class Credentials {
     }
 
     public  void show() {
+        System.out.println("Покупатель");
         System.out.println("ID = " +ID);
         System.out.println("Surname= " +Surname);
         System.out.println("Firstname = " +FirstName);

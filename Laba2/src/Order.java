@@ -1,5 +1,4 @@
 import java.sql.Date;
-import java.util.Random;
 
 public class Order {
 
@@ -24,10 +23,6 @@ public class Order {
         return dateCreate;
     }
 
-    public long getTimeWaiting() {
-        return timeWaiting;
-    }
-
     public OrderStatus getStatus() {
         return status;
     }
@@ -36,11 +31,8 @@ public class Order {
         this.status = status;
     }
 
-    public long getInterval() {
-        return dateCreate.getTime() + timeWaiting;
-
-    }
     public boolean checkInterval(long time) {
+
         if ((dateCreate.getTime() + timeWaiting) < time) {
             return true;
         } else {
@@ -54,8 +46,5 @@ public class Order {
         System.out.println("Status = "+ status);
         System.out.println("Data Create = " + dateCreate);
         System.out.println("Time Waiting = " + timeWaiting);
-
     }
-
-
 }
