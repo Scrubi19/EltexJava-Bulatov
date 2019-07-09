@@ -67,6 +67,9 @@ public abstract class Product implements IcrudAction {
         this.price = 0;
         this.counter = 0;
     }
+    public UUID getUUID() {
+        return ID;
+    }
 }
 
 class Tea extends Product {

@@ -1,34 +1,61 @@
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
+import java.sql.Date;
+import java.util.Random;
 
 public class Order {
-    private LocalTime TimeCreate;
-    private LocalTime TimeExpect;
-    private boolean status;
 
-    public Order() {
-        this.TimeCreate = LocalTime.now();
-        this.TimeExpect = getTime_expect();
-        this.status = false;
+    private ShoppingCart cart;
+    private Credentials user;
+
+    private Date dateCreate;
+    private long timeWaiting;
+    private OrderStatus status;
+
+
+    public Order(ShoppingCart Cart, Credentials User) {
+        this.cart = Cart;
+        this.user = User;
+        this.status = OrderStatus.WAITING;
+
+        this.dateCreate = new Date(System.currentTimeMillis());
+        this.timeWaiting = (int)(Math.random() * 1000);
     }
 
-    void Check() {
-        long secBetween = ChronoUnit.SECONDS.between(this.TimeCreate, this.TimeExpect);
-
-        if(secBetween == 5 ) {
-            this.status = true;
-        }
+    public Date getDateCreate() {
+        return dateCreate;
     }
 
-    public LocalTime getTime_create() {
-        return TimeCreate;
+    public long getTimeWaiting() {
+        return timeWaiting;
     }
 
-    public LocalTime getTime_expect() {
-        return TimeExpect;
-    }
-
-    public boolean isStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public long getInterval() {
+        return dateCreate.getTime() + timeWaiting;
+
+    }
+    public boolean checkInterval(long time) {
+        if ((dateCreate.getTime() + timeWaiting) < time) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public void show() {
+        System.out.println("Ваш заказ");
+        cart.show();
+        user.show();
+        System.out.println("Status = "+ status);
+        System.out.println("Data Create = " + dateCreate);
+        System.out.println("Time Waiting = " + timeWaiting);
+
+    }
+
+
 }

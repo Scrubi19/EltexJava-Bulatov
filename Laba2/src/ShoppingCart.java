@@ -1,31 +1,32 @@
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
 public class ShoppingCart {
 
-    private ArrayList<Product> cart;
+    private List<Product> cart;
+    private Set<UUID> uuids;
 
     public ShoppingCart() {
         this.cart = new ArrayList<>();
+        this.uuids = new HashSet<>();
     }
 
-    void add_cart(Product obj) {
-        this.cart.add(obj);
+    public boolean add(Product product) {
+        uuids.add(product.getUUID());
+        return this.cart.add(product);
     }
 
-    void delete_cart(Product obj) {
-        this.cart.remove(obj);
+    void delete(Product product) {
+        this.cart.remove(product);
     }
 
-    void ShowAll() {
-        int i = 1;
-        Iterator<Product> iter = this.cart.iterator();
-        System.out.println("Содержимое корзины");
-        while(iter.hasNext()){
-            Product val = iter.next();
-            System.out.println(i + ")-------------\nID: "+ val.ID + "\nНазвание:  " + val.Name + "\nЦена: " + val.price +"\nПоставщик: " + val.provider);
-            i++;
+    public void show() {
+        for(Product val: cart) {
+            val.read();
         }
+    }
+
+    public boolean isExistsUUID(UUID id) {
+        return uuids.contains(id);
     }
 
 }

@@ -21,4 +21,12 @@ public class Credentials {
         this.email = sc.nextLine();
     }
 
+    public  void show() {
+        System.out.println("ID = " +ID);
+        System.out.println("Surname= " +Surname);
+        System.out.println("Firstname = " +FirstName);
+        System.out.println("Secondname = " +Secondname);
+        System.out.println("Email = " +email);
+    }
+
 }
