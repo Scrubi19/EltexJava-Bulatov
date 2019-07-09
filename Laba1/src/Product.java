@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.UUID;
 
-public abstract class product implements IcrudAction {
+public abstract class Product implements IcrudAction {
 
     UUID ID;
     protected String Name;

@@ -18,7 +18,7 @@ public class Main {
                 //tea[i].update();
                 tea[i].read();
             }
-            System.out.println("\nКол-во обьектов:"+ product.CounterObject);
+            System.out.println("\nКол-во обьектов:"+ Product.CounterObject);
             /**
              * Пример работы функции update
              */
@@ -38,7 +38,7 @@ public class Main {
 //                coffee[i].update();
                 coffee[i].read();
             }
-            System.out.println("\nКол-во обьектов:"+ product.CounterObject);
+            System.out.println("\nКол-во обьектов:"+ Product.CounterObject);
             /**
              * Пример работы функции update
              */

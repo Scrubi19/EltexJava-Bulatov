@@ -2,7 +2,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.UUID;
 
-class Tea extends product {
+class Tea extends Product {
 
     private String typeBox;
 

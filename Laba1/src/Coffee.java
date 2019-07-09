@@ -2,7 +2,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.UUID;
 
-class Coffee extends product {
+class Coffee extends Product {
     private String grainType;
 
     Coffee() {
