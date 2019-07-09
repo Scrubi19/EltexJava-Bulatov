@@ -3,25 +3,7 @@ import java.util.UUID;
 
 public class Main {
 
-    public static void main(String[] args) {
-//
-//        Scanner sc = new Scanner(System.in);
-//        Credentials user = new Credentials();
-//
-//        ShoppingCart cart = new ShoppingCart();
-//        cart.add(new Tea());
-//        cart.add(new Coffee());
-//        Orders orders = new Orders();
-//        orders.offer(cart, user);
-//
-////        ShoppingCart cart2 = new ShoppingCart();
-////        cart2.add(new Tea());
-////        cart2.add(new Coffee());
-//        Tea tea = new Tea();
-//        orders.offer(cart2, user);
-//
-//        System.out.println(cart.isExistsUUID());
-
+    public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         Credentials user = new Credentials();
         System.out.println("\nМеню:\n1.Чай\n2.Кофе\n");
@@ -45,8 +27,9 @@ public class Main {
             if (choice2 == 1) {
                 Orders orders = new Orders();
                 orders.offer(cart, user);
-                orders.show();
+                Thread.sleep(10);
                 orders.checkTime();
+                orders.show();
                 System.out.println("Проверка: " + cart.isExistsUUID(tea[0].getUUID()));
             } else {
                 return;
@@ -71,8 +54,9 @@ public class Main {
             if (choice2 == 1) {
                 Orders orders = new Orders();
                 orders.offer(cart, user);
-                orders.show();
+                Thread.sleep(10);
                 orders.checkTime();
+                orders.show();
                 System.out.println("Проверка: " + cart.isExistsUUID(coffee[0].getUUID()));
             } else {
                 return;

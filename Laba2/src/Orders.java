@@ -30,9 +30,9 @@ public class Orders {
     public void checkTime() {
         for (Order order: orders) {
             if(order.getStatus() == OrderStatus.WAITING &&
-                order.checkInterval(System.currentTimeMillis())) {
+                    order.checkInterval(System.currentTimeMillis())) {
                 order.setStatus(OrderStatus.DONE);
-               // orders.remove(order);
+                //orders.remove(order);
             }
         }
     }

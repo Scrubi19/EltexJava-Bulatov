@@ -16,7 +16,8 @@ public class Order {
         this.status = OrderStatus.WAITING;
 
         this.dateCreate = new Date(System.currentTimeMillis());
-        this.timeWaiting = (int)(Math.random() * 1000);
+        //this.timeWaiting = (int)(Math.random() * 1000);
+        this.timeWaiting = 1;
     }
 
     public Date getDateCreate() {
@@ -32,12 +33,10 @@ public class Order {
     }
 
     public boolean checkInterval(long time) {
-
         if ((dateCreate.getTime() + timeWaiting) < time) {
             return true;
-        } else {
+        } else
             return false;
-        }
     }
     public void show() {
         System.out.println("Ваш заказ");
