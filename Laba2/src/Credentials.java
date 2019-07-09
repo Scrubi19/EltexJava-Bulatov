@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Credentials {
@@ -7,51 +8,17 @@ public class Credentials {
     private String Secondname;
     private String email;
 
-    public Credentials(String surname, String firstName, String secondname, String email) {
+    public Credentials() {
         ID = UUID.randomUUID();
-        this.Surname = surname;
-        this.FirstName = firstName;
-        this.Secondname = secondname;
-        this.email = email;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Выполни регистрацию для начала покупок:\nФамилия: ");
+        this.Surname = sc.nextLine();
+        System.out.print("Имя: ");
+        this.FirstName = sc.nextLine();
+        System.out.print("Отчество: ");
+        this.Secondname = sc.nextLine();
+        System.out.print("Email: ");
+        this.email = sc.nextLine();
     }
 
-    public UUID getID() {
-        return ID;
-    }
-
-    public String getSurname() {
-        return Surname;
-    }
-
-    public String getFirstName() {
-        return FirstName;
-    }
-
-    public String getSecondname() {
-        return Secondname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setID(UUID ID) {
-        ID = ID;
-    }
-
-    public void setSurname(String surname) {
-        Surname = surname;
-    }
-
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
-    }
-
-    public void setSecondname(String secondname) {
-        Secondname = secondname;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

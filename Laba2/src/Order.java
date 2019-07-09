@@ -1,35 +1,34 @@
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+
 public class Order {
-    private String time_create;
-    private int time_expect;
-    private String status;
+    private LocalTime TimeCreate;
+    private LocalTime TimeExpect;
+    private boolean status;
 
-    public Order(String time_create, int time_expect, String status) {
-        this.time_create = time_create;
-        this.time_expect = time_expect;
-        this.status = status;
+    public Order() {
+        this.TimeCreate = LocalTime.now();
+        this.TimeExpect = getTime_expect();
+        this.status = false;
     }
 
-    public String getTime_create() {
-        return time_create;
+    void Check() {
+        long secBetween = ChronoUnit.SECONDS.between(this.TimeCreate, this.TimeExpect);
+
+        if(secBetween == 5 ) {
+            this.status = true;
+        }
     }
 
-    public int getTime_expect() {
-        return time_expect;
+    public LocalTime getTime_create() {
+        return TimeCreate;
     }
 
-    public String getStatus() {
+    public LocalTime getTime_expect() {
+        return TimeExpect;
+    }
+
+    public boolean isStatus() {
         return status;
-    }
-
-    public void setTime_create(String  time_create) {
-        this.time_create = time_create;
-    }
-
-    public void setTime_expect(int time_expect) {
-        this.time_expect = time_expect;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }
