@@ -21,7 +21,7 @@ public class Main {
                 tea[i].create();
                 tea[i].read();
             }
-            System.out.println("\nКол-во товара:"+ product.CounterObject + "\n1.Оформить заказ\n2.Выход");
+            System.out.println("\nКол-во товара:"+ Product.CounterObject + "\n1.Оформить заказ\n2.Выход");
             int choice2 = sc.nextInt();
             if(choice2 == 1) {
                 Order order = new Order();
