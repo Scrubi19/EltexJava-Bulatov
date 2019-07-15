@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class ShoppingCart {
+public class ShoppingCart <T extends Product> {
 
-    private List<Product> cart;
+    private List<T> cart;
     private Set<UUID> uuids;
 
     public ShoppingCart() {
@@ -10,17 +10,17 @@ public class ShoppingCart {
         this.uuids = new HashSet<>();
     }
 
-    public boolean add(Product product) {
+    public boolean add(T product) {
         uuids.add(product.getUUID());
         return this.cart.add(product);
     }
 
-    void delete(Product product) {
+    void delete(T product) {
         this.cart.remove(product);
     }
 
     public void show() {
-        for(Product val: cart) {
+        for(T val: cart) {
             val.read();
         }
     }
@@ -28,5 +28,4 @@ public class ShoppingCart {
     public boolean isExistsUUID(UUID id) {
         return uuids.contains(id);
     }
-
 }

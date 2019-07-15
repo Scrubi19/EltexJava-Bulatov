@@ -1,34 +1,33 @@
+import java.lang.reflect.Constructor;
 import java.sql.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Supplier;
 
-public class Orders {
+public class Orders <T extends Order> {
 
-    private List<Order> orders;
-    private Map<Date, Order> dateOrder;
+    private List<T> orders;
+    private Map<Date, T> dateOrder;
 
     public Orders() {
         this.orders = new LinkedList<>();
         this.dateOrder = new HashMap<>();
     }
 
-    void add_orders(Order obj) {
+    void add(T obj) {
         this.orders.add(obj);
     }
 
-    void delete_orders(Order obj) {
+    void delete(T obj) {
         this.orders.remove(obj);
     }
 
-    public void offer(ShoppingCart cart, Credentials user) {
+    public void offer(ShoppingCart cart, Credentials user){
         Order order = new Order(cart, user);
-        orders.add(order);
-        dateOrder.put(order.getDateCreate(), order);
+        orders.add((T) order);
+        dateOrder.put(order.getDateCreate(), (T) order);
     }
     public void checkTime() {
-        for (Order order: orders) {
+        for (T order: orders) {
             if(order.getStatus() == OrderStatus.WAITING &&
                     order.checkInterval(System.currentTimeMillis())) {
                 order.setStatus(OrderStatus.DONE);
@@ -37,7 +36,7 @@ public class Orders {
         }
     }
     public void checkDone() {
-        for (Order order: orders) {
+        for (T order: orders) {
             if(order.getStatus() == OrderStatus.DONE) {
                 order.setStatus(OrderStatus.DONE);
                 orders.remove(order);
@@ -46,7 +45,7 @@ public class Orders {
     }
 
     public void show() {
-       for(Order order: orders) {
+       for(T order: orders) {
            System.out.println("----------------------------");
            order.show();
        }
