@@ -1,16 +1,24 @@
 # Compiled class file
-*.xml
 *.class
 *.iml
+
 /out
 /.idea
 /Laba1/out
 /Laba2/out
+/Laba3/out
+/Laba4/out
+
 /Laba1/.idea
 /Laba2/.idea
 /Laba3/.idea
+/Laba4/.idea
+
 Laba1/out/production/Laba1/META-INF/Laba1.kotlin_module
 Laba2/out/production/Laba2/META-INF/Laba2.kotlin_module
+Laba3/out/production/Laba1/META-INF/Laba1.kotlin_module
+Laba4/out/production/Laba2/META-INF/Laba2.kotlin_module
+
 # Log file
 *.log
 
