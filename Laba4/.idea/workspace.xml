@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b744decd-5b81-4ca3-9c24-4c31e9c19fdb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ACheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CheckDone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CheckTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/service/src/main/java/ru/bulatov/service/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/utils/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../root-home/utils/src/main/java/ru/bulatov/utils/Man.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rootlab/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rootlab/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rootlab/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rootlab/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rootlab/src/main/java/ru/eltex/bulatov/rootlab/Ignite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Credentials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShoppingCart.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563266236967</updated>
-      <workItem from="1563785756377" duration="8973000" />
+      <workItem from="1563785756377" duration="9296000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit for labs">
       <created>1563267419932</created>
