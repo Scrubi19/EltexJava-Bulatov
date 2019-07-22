@@ -9,7 +9,7 @@ public class Orders <T extends Order> {
     private Map<Date, T> dateOrder;
 
     public Orders() {
-        this.orders = new LinkedList<>();
+        this.orders = Collections.synchronizedList(new LinkedList<T>());
         this.dateOrder = new HashMap<>();
     }
 
@@ -25,21 +25,32 @@ public class Orders <T extends Order> {
         Order order = new Order(cart, user);
         orders.add((T) order);
         dateOrder.put(order.getDateCreate(), (T) order);
+        cart.show_short();
+
     }
+
     public void checkTime() {
-        for (T order: orders) {
-            if(order.getStatus() == OrderStatus.WAITING &&
-                    order.checkInterval(System.currentTimeMillis())) {
-                order.setStatus(OrderStatus.DONE);
-                //orders.remove(order);
+        synchronized(orders) {
+            Iterator it = orders.iterator();
+            while(it.hasNext()) {
+                Order order = (Order) it.next();
+                if (order.getStatus() == OrderStatus.WAITING &&
+                        order.checkInterval(System.currentTimeMillis())) {
+                    order.setStatus(OrderStatus.DONE);
+                    System.out.println("Проверка заказа...");
+                }
             }
         }
     }
     public void checkDone() {
-        for (T order: orders) {
-            if(order.getStatus() == OrderStatus.DONE) {
-                order.setStatus(OrderStatus.DONE);
-                orders.remove(order);
+        synchronized (orders) {
+            Iterator it = orders.iterator();
+            while (it.hasNext()) {
+                Order order = (Order) it.next();
+                if (order.getStatus() == OrderStatus.DONE) {
+                    it.remove();
+                    System.out.println("Удаление заказа");
+                }
             }
         }
     }

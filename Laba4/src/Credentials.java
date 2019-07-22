@@ -21,6 +21,13 @@ public class Credentials {
         this.email = sc.nextLine();
     }
 
+    public Credentials(String surname, String firstName, String secondname, String email) {
+        Surname = surname;
+        FirstName = firstName;
+        Secondname = secondname;
+        this.email = email;
+    }
+
     public  void show() {
         System.out.println("Покупатель");
         System.out.println("ID = " +ID);
