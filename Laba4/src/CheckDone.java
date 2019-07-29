@@ -12,7 +12,9 @@ public class CheckDone extends ACheck {
     @Override
     public void run() {
         while(fRun) {
-            getOrders().checkDone();
+            synchronized (orders) {
+                getOrders().checkDone();
+            }
             try {
                 Thread.sleep(pause);
             } catch (InterruptedException e) {

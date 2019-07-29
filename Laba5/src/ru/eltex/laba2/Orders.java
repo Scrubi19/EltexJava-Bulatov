@@ -1,3 +1,4 @@
+package ru.eltex.laba2;
 import java.lang.reflect.Constructor;
 import java.sql.Date;
 import java.util.*;
@@ -26,7 +27,7 @@ public class Orders <T extends Order> {
         Order order = new Order(cart, user);
         orders.add((T) order);
         dateOrder.put(order.getDateCreate(), (T) order);
-        cart.show_short();
+        //cart.show_short();
 
     }
 

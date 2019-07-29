@@ -1,6 +1,14 @@
-public class CheckTime extends ACheck {
+package ru.eltex.laba4;
+import ru.eltex.laba2.Orders;
 
-    CheckTime(Orders orders, long pause) {
+
+public class CheckDone extends ACheck {
+
+    CheckDone(Orders orders) {
+        super(orders);
+    }
+
+    public CheckDone(Orders orders, long pause) {
         super(orders);
         this.pause = pause;
     }
@@ -9,7 +17,7 @@ public class CheckTime extends ACheck {
     public void run() {
         while(fRun) {
             synchronized (orders) {
-                getOrders().checkTime();
+                getOrders().checkDone();
             }
             try {
                 Thread.sleep(pause);
@@ -17,6 +25,5 @@ public class CheckTime extends ACheck {
                 e.printStackTrace();
             }
         }
-
     }
 }

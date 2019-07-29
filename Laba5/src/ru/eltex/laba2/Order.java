@@ -1,3 +1,4 @@
+package ru.eltex.laba2;
 import java.sql.Date;
 
 public class Order {

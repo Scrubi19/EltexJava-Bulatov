@@ -1,3 +1,6 @@
+package ru.eltex.laba2;
+import ru.eltex.laba1.Product;
+
 import java.util.*;
 
 public class ShoppingCart <T extends Product> {
@@ -25,11 +28,11 @@ public class ShoppingCart <T extends Product> {
             val.read();
         }
     }
-    public void show_short() {
-        for(T val: cart) {
-            System.out.println(val.Name+"("+val.price+")");
-        }
-    }
+//    public void show_short() {
+//        for(T val: cart) {
+//            System.out.println(val.Name+"("+val.price+")");
+//        }
+//    }
 
     public boolean isExistsUUID(UUID id) {
         return uuids.contains(id);
