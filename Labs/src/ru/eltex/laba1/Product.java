@@ -1,11 +1,12 @@
 package ru.eltex.laba1;
 
+import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.UUID;
 
-public abstract class Product implements IcrudAction {
+public abstract class Product implements IcrudAction, Serializable {
 
     UUID ID;
     protected String Name;

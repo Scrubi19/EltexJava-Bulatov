@@ -1,9 +1,10 @@
 package ru.eltex.laba2;
 import ru.eltex.laba1.Product;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class ShoppingCart <T extends Product> {
+public class ShoppingCart <T extends Product> implements Serializable {
 
     private List<T> cart;
     private Set<UUID> uuids;

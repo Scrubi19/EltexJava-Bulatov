@@ -1,5 +1,6 @@
 package ru.eltex.laba1;
 
+import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.UUID;

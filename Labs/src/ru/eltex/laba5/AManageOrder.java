@@ -1,23 +1,7 @@
 package ru.eltex.laba5;
+import java.io.File;
 
 public abstract class AManageOrder implements IOrder {
-    @Override
-    public void readByID() {
+    public File target;
 
-    }
-
-    @Override
-    public void saveByID() {
-
-    }
-
-    @Override
-    public void readAll() {
-
-    }
-
-    @Override
-    public void saveAll() {
-
-    }
 }

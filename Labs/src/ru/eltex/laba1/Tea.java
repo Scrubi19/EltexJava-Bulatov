@@ -1,10 +1,11 @@
 package ru.eltex.laba1;
 
+import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.UUID;
 
-public class Tea extends Product {
+public class Tea extends Product{
 
     private String typeBox;
 

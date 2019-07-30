@@ -10,6 +10,12 @@
 /Laba4/out
 /Laba5/out
 
+/Laba1/.idea
+/Laba2/.idea
+/Laba3/.idea
+/Laba4/.idea
+/Labs/.idea
+
 # Log file
 *.log
 

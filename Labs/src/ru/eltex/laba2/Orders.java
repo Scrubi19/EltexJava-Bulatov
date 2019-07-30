@@ -1,11 +1,12 @@
 package ru.eltex.laba2;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.*;
 
-public class Orders <T extends Order> {
+public class Orders <T extends Order> implements Serializable {
 
-    private List<T> orders;
+    public List<T> orders;
     private Map<Date, T> dateOrder;
 
     public Orders() {

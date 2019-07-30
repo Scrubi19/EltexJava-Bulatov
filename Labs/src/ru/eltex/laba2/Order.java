@@ -1,8 +1,11 @@
 package ru.eltex.laba2;
+import java.io.Serializable;
 import java.sql.Date;
+import java.util.UUID;
 
-public class Order {
+public class Order implements Serializable {
 
+    private UUID id;
     private ShoppingCart cart;
     private Credentials user;
 
@@ -12,6 +15,7 @@ public class Order {
 
 
     public Order(ShoppingCart Cart, Credentials User) {
+        this.id = UUID.randomUUID();
         this.cart = Cart;
         this.user = User;
         this.status = OrderStatus.WAITING;
@@ -45,5 +49,8 @@ public class Order {
         System.out.println("Status = "+ status);
         System.out.println("Data Create = " + dateCreate);
         System.out.println("Time Waiting = " + timeWaiting);
+    }
+    public UUID getUUID() {
+        return this.id;
     }
 }
