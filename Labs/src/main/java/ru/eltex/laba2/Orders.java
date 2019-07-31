@@ -10,7 +10,6 @@ public class Orders <T extends Order> implements Serializable {
     private Map<Date, T> dateOrder;
 
     public Orders() {
-        //this.orders = Collections.synchronizedList(new LinkedList<T>());
         this.orders = new LinkedList<T>();
         this.dateOrder = new HashMap<>();
     }
@@ -63,7 +62,6 @@ public class Orders <T extends Order> implements Serializable {
            order.show();
        }
     }
-
 }
 
 

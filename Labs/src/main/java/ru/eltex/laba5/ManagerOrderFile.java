@@ -34,14 +34,21 @@ public class ManagerOrderFile extends AManageOrder {
     }
 
     @Override
-    public void saveByID(Order order) {
+    public void saveByID(Orders orders, UUID id) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(BIN_PATH))) {
-            if (!target.exists()) {
-                target.createNewFile();
-            } else {
-                oos.writeObject(order);
+            Iterator it = orders.orders.iterator();
+            while (it.hasNext()) {
+                Order order = (Order) it.next();
+                if (order.getUUID().equals(id)) {
+                    if (!target.exists()) {
+                        target.createNewFile();
+                    } else {
+                        oos.writeObject(order);
+                        oos.flush();
+                    }
+                    break;
+                }
             }
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -69,6 +76,7 @@ public class ManagerOrderFile extends AManageOrder {
                 target.createNewFile();
             } else {
                 oos.writeObject(orders);
+                oos.flush();
             }
         } catch (IOException ex) {
             ex.printStackTrace();

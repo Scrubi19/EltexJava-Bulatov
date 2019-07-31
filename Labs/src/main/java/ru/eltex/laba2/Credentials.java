@@ -25,6 +25,7 @@ public class Credentials implements Serializable {
     }
 
     public Credentials(String surname, String firstName, String secondname, String email) {
+        ID = UUID.randomUUID();
         Surname = surname;
         FirstName = firstName;
         Secondname = secondname;

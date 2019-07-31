@@ -12,7 +12,7 @@ public class ManagerOrderJSON extends AManageOrder{
     }
 
     @Override
-    public void saveByID(Order order) {
+    public void saveByID(Orders orders, UUID id) {
 
     }
 

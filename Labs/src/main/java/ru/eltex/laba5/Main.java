@@ -1,8 +1,6 @@
 package ru.eltex.laba5;
 import ru.eltex.laba1.*;
 import ru.eltex.laba2.*;
-
-
 import java.util.Scanner;
 
 public class Main {
@@ -32,9 +30,18 @@ public class Main {
                 orders.offer(cart, user);
                 ManagerOrderFile manager = new ManagerOrderFile();
                 manager.saveAll(orders);
-                Orders orders2 = manager.readAll();
+                Orders example1 = manager.readAll();
                 System.out.println("Orders из бинарного файла");
-                orders2.show();
+                example1.show();
+//                System.out.println("Добавление еще одного заказа");
+//                ManagerOrderFile manager2 = new ManagerOrderFile();
+//                Credentials user2 = new Credentials("Булатников", "Алексей", "Ипатович", "scrubismemo@yandex.ru");
+//                Order order2 = new Order(cart, user2);
+//                orders.offer(cart, user2);
+//                manager2.saveByID(orders, order2.getUUID());
+//                Orders example2 = manager2.readAll();
+//                System.out.println("Orders из бинарного файла");
+//                example2.show();
             } else {
                 return;
             }

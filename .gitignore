@@ -2,8 +2,6 @@
 *.class
 *.iml
 
-/out
-/.idea
 /Laba1/out
 /Laba2/out
 /Laba3/out
@@ -15,6 +13,7 @@
 /Laba3/.idea
 /Laba4/.idea
 /Labs/.idea
+root/.idea/
 
 # Log file
 *.log

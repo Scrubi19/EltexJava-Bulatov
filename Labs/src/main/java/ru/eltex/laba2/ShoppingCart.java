@@ -10,7 +10,6 @@ public class ShoppingCart <T extends Product> implements Serializable {
     private Set<UUID> uuids;
 
     public ShoppingCart() {
-        //this.cart = Collections.synchronizedList(new LinkedList<T>());
         this.cart = new LinkedList<>();
         this.uuids = new HashSet<>();
     }
