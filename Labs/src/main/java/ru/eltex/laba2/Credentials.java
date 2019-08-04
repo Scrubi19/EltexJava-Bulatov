@@ -11,19 +11,6 @@ public class Credentials implements Serializable {
     private String Secondname;
     private String email;
 
-    public Credentials() {
-        ID = UUID.randomUUID();
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Выполни регистрацию для начала покупок:\nФамилия: ");
-        this.Surname = sc.nextLine();
-        System.out.print("Имя: ");
-        this.FirstName = sc.nextLine();
-        System.out.print("Отчество: ");
-        this.Secondname = sc.nextLine();
-        System.out.print("Email: ");
-        this.email = sc.nextLine();
-    }
-
     public Credentials(String surname, String firstName, String secondname, String email) {
         ID = UUID.randomUUID();
         Surname = surname;

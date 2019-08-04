@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandValue {
     private String [] NameTea = { "Высокогорный", "Принцесса Нури", "Lipton", "Nestea", "Richard", "AhmadTea"};
     private String [] NameCoffee = { "Nescafe", "Jardin", "Carte Noire", "Nespresso", "Klimbo", "Lavazza", "Живой кофе"};
-    private String [] Provider = {"KDV", "Nestlea", "JFK", "T&ME"};
+    private String [] Provider = {"KDV", "Nestlea", "JFK", "TME"};
     private String [] Country = {"Россия", "Китай", "Индия", "Германия","Испания"};
     private String [] TypeBox = {"Картон","Бумага", "Целлофан"};
     private String [] GrainType = {"Арабика", "Робуста"};

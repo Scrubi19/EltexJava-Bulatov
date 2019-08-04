@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        Credentials user = new Credentials();
+        Credentials user = new Credentials("Булатников", "Алексей", "Ипатович", "scrubismemo@yandex.ru");
         System.out.println("\nМеню:\n1.Чай\n2.Кофе\n");
         int choice = sc.nextInt();
         if (choice == 1) {

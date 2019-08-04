@@ -1,0 +1,64 @@
+{
+  "orders": [
+    {
+      "id": "40d9d86c-525b-432f-8676-369abe5c6210",
+      "cart": {
+        "cart": [
+          {
+            "typeBox": "Целлофан",
+            "ID": "fbb8da12-4188-4f8f-a613-3e1dc8d00019",
+            "Name": "AhmadTea",
+            "price": 28,
+            "counter": 37,
+            "provider": "Nestlea",
+            "country": "Индия"
+          }
+        ],
+        "uuids": [
+          "fbb8da12-4188-4f8f-a613-3e1dc8d00019"
+        ]
+      },
+      "user": {
+        "ID": "c686db47-3be6-43d7-824f-8621e4132444",
+        "Surname": "Булатов",
+        "FirstName": "Александр",
+        "Secondname": "Сергеевич",
+        "email": "scrubi.memo@yandex.ru"
+      },
+      "dateCreate": "авг. 4, 2019",
+      "timeWaiting": 1,
+      "status": "WAITING"
+    }
+  ],
+  "dateOrder": {
+    "2019-08-04": {
+      "id": "40d9d86c-525b-432f-8676-369abe5c6210",
+      "cart": {
+        "cart": [
+          {
+            "typeBox": "Целлофан",
+            "ID": "fbb8da12-4188-4f8f-a613-3e1dc8d00019",
+            "Name": "AhmadTea",
+            "price": 28,
+            "counter": 37,
+            "provider": "Nestlea",
+            "country": "Индия"
+          }
+        ],
+        "uuids": [
+          "fbb8da12-4188-4f8f-a613-3e1dc8d00019"
+        ]
+      },
+      "user": {
+        "ID": "c686db47-3be6-43d7-824f-8621e4132444",
+        "Surname": "Булатов",
+        "FirstName": "Александр",
+        "Secondname": "Сергеевич",
+        "email": "scrubi.memo@yandex.ru"
+      },
+      "dateCreate": "авг. 4, 2019",
+      "timeWaiting": 1,
+      "status": "WAITING"
+    }
+  }
+}

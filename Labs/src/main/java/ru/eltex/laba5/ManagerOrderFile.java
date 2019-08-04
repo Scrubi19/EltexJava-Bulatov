@@ -34,26 +34,20 @@ public class ManagerOrderFile extends AManageOrder {
     }
 
     @Override
-    public void saveByID(Orders orders, UUID id) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(BIN_PATH))) {
-            Iterator it = orders.orders.iterator();
-            while (it.hasNext()) {
-                Order order = (Order) it.next();
-                if (order.getUUID().equals(id)) {
-                    if (!target.exists()) {
-                        target.createNewFile();
-                    } else {
-                        oos.writeObject(order);
-                        oos.flush();
-                    }
-                    break;
-                }
+    public void saveByID(Order order) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(BIN_PATH)))
+        {
+            if (target.exists()) {
+                 oos.writeObject(order);
+            } else {
+                System.out.println("File is not exist. Trying to create new file");
+                target.createNewFile();
+
             }
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
-
     @Override
     public Orders readAll() {
         Orders orders = null;
@@ -72,11 +66,12 @@ public class ManagerOrderFile extends AManageOrder {
     @Override
     public void saveAll(Orders orders) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(BIN_PATH))) {
-            if (!target.exists()) {
-                target.createNewFile();
-            } else {
+            if (target.exists()) {
                 oos.writeObject(orders);
                 oos.flush();
+            } else {
+                System.out.println("File is not exist. Trying to create new file");
+                target.createNewFile();
             }
         } catch (IOException ex) {
             ex.printStackTrace();
