@@ -6,12 +6,17 @@ import java.util.*;
 
 public class Orders <T extends Order> implements Serializable {
 
-    public List<T> orders;
-    private Map<Date, T> dateOrder;
+    public LinkedList<T> orders;
+    private HashMap<Date, T> dateOrder;
 
     public Orders() {
         this.orders = new LinkedList<T>();
         this.dateOrder = new HashMap<>();
+    }
+
+    public Orders(LinkedList<T> list, HashMap<Date, T> createTime) {
+        this.orders = list;
+        this.dateOrder = createTime;
     }
 
     void add(T obj) {

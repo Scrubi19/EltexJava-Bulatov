@@ -24,6 +24,15 @@ public class Order implements Serializable {
         this.timeWaiting = 1;
     }
 
+    public Order(UUID id, OrderStatus status, Date dateCreate, long diff, ShoppingCart<?> cart, Credentials user) {
+        this.id = id;
+        this.status = status;
+        this.dateCreate = dateCreate;
+        this.timeWaiting = diff;
+        this.cart = cart;
+        this.user = user;
+    }
+
     public Date getDateCreate() {
         return dateCreate;
     }
@@ -53,4 +62,5 @@ public class Order implements Serializable {
     public UUID getUUID() {
         return this.id;
     }
+
 }

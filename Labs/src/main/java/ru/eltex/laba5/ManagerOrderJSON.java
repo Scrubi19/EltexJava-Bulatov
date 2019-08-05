@@ -16,16 +16,18 @@ import java.util.UUID;
 
 public class ManagerOrderJSON extends AManageOrder{
     public static final String JSON_PATH = "/home/scrubi19/Dropbox/EltexJava-Bulatov/Labs/target/result.json";
-
     private final Gson json;
 
     public ManagerOrderJSON() {
         final GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(Product.class, new ProductDeserializer())
+                .registerTypeAdapter(Order.class,  new OrderDeserializer())
+                .registerTypeAdapter(Orders.class, new OrdersDeserializer());
+
         json = gsonBuilder.setPrettyPrinting().create();
 
         target = new File(JSON_PATH);
     }
-
 
     @Override
     public Order readByID(UUID id) {
@@ -37,8 +39,8 @@ public class ManagerOrderJSON extends AManageOrder{
             Type type = new TypeToken<Order>() {
             }.getType();
             order = json.fromJson(reader, type);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
         return order;
     }
@@ -65,7 +67,9 @@ public class ManagerOrderJSON extends AManageOrder{
             if (!target.exists()) {
                 return null;
             }
-            orders = json.fromJson(reader, Orders.class);
+            Type type = new TypeToken<Orders<Order>>() {
+            }.getType();
+            orders = json.fromJson(reader, type);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
