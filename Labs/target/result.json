@@ -1,64 +1,68 @@
 {
   "orders": [
     {
-      "id": "9447566c-55ae-4531-8a66-ce3a28974be3",
+      "id": "91133d3f-fb8b-42eb-ac46-ffeb178d8780",
       "cart": {
         "cart": [
           {
             "typeBox": "Целлофан",
-            "ID": "3dd4a71a-9d3e-48a5-8d59-3d4a997735a7",
-            "Name": "Lipton",
-            "price": 129,
-            "counter": 0,
-            "provider": "KDV",
-            "country": "Китай"
+            "ID": "6a1e025c-86c9-47e8-9740-1983749384e6",
+            "Name": "Richard",
+            "price": 144,
+            "counter": 8,
+            "provider": "TME",
+            "country": "Испания"
           }
         ],
         "uuids": [
-          "3dd4a71a-9d3e-48a5-8d59-3d4a997735a7"
+          "6a1e025c-86c9-47e8-9740-1983749384e6"
         ]
       },
       "user": {
-        "ID": "b16b83b5-2e8f-4d35-ae5c-18108e38f4ca",
+        "ID": "fbe4b479-87ed-4edd-8d6d-59ed0fb421e8",
         "Surname": "Булатов",
         "FirstName": "Александр",
         "Secondname": "Сергеевич",
         "email": "scrubi.memo@yandex.ru"
       },
-      "dateCreate": "авг. 5, 2019",
+      "dateCreate": "авг. 14, 2019",
       "timeWaiting": 1,
-      "status": "WAITING"
+      "status": "WAITING",
+      "address": "127.0.0.1",
+      "port": 0
     }
   ],
   "dateOrder": {
-    "2019-08-05": {
-      "id": "9447566c-55ae-4531-8a66-ce3a28974be3",
+    "2019-08-14": {
+      "id": "91133d3f-fb8b-42eb-ac46-ffeb178d8780",
       "cart": {
         "cart": [
           {
             "typeBox": "Целлофан",
-            "ID": "3dd4a71a-9d3e-48a5-8d59-3d4a997735a7",
-            "Name": "Lipton",
-            "price": 129,
-            "counter": 0,
-            "provider": "KDV",
-            "country": "Китай"
+            "ID": "6a1e025c-86c9-47e8-9740-1983749384e6",
+            "Name": "Richard",
+            "price": 144,
+            "counter": 8,
+            "provider": "TME",
+            "country": "Испания"
           }
         ],
         "uuids": [
-          "3dd4a71a-9d3e-48a5-8d59-3d4a997735a7"
+          "6a1e025c-86c9-47e8-9740-1983749384e6"
         ]
       },
       "user": {
-        "ID": "b16b83b5-2e8f-4d35-ae5c-18108e38f4ca",
+        "ID": "fbe4b479-87ed-4edd-8d6d-59ed0fb421e8",
         "Surname": "Булатов",
         "FirstName": "Александр",
         "Secondname": "Сергеевич",
         "email": "scrubi.memo@yandex.ru"
       },
-      "dateCreate": "авг. 5, 2019",
+      "dateCreate": "авг. 14, 2019",
       "timeWaiting": 1,
-      "status": "WAITING"
+      "status": "WAITING",
+      "address": "127.0.0.1",
+      "port": 0
     }
   }
 }

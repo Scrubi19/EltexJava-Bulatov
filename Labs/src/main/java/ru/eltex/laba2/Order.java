@@ -1,5 +1,6 @@
 package ru.eltex.laba2;
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.sql.Date;
 import java.util.UUID;
 
@@ -13,6 +14,9 @@ public class Order implements Serializable {
     private long timeWaiting;
     private OrderStatus status;
 
+    private InetAddress address;
+    private int port;
+
 
     public Order(ShoppingCart Cart, Credentials User) {
         this.id = UUID.randomUUID();
@@ -22,6 +26,8 @@ public class Order implements Serializable {
 
         this.dateCreate = new Date(System.currentTimeMillis());
         this.timeWaiting = 1;
+        this.address = InetAddress.getLoopbackAddress();
+        this.port = 0;
     }
 
     public Order(UUID id, OrderStatus status, Date dateCreate, long diff, ShoppingCart<?> cart, Credentials user) {
@@ -31,6 +37,18 @@ public class Order implements Serializable {
         this.timeWaiting = diff;
         this.cart = cart;
         this.user = user;
+    }
+
+    public Order(ShoppingCart<?> cart, Credentials user, InetAddress address, int port) {
+        this.id = UUID.randomUUID();
+        this.status = OrderStatus.WAITING;
+        this.dateCreate = new Date(System.currentTimeMillis());
+        this.timeWaiting = 1;
+
+        this.cart = cart;
+        this.user = user;
+        this.address = address;
+        this.port = port;
     }
 
     public Date getDateCreate() {

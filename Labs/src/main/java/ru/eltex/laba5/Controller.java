@@ -1,6 +1,5 @@
 package ru.eltex.laba5;
 
-import com.google.gson.internal.bind.util.ISO8601Utils;
 import ru.eltex.laba1.Coffee;
 import ru.eltex.laba1.Product;
 import ru.eltex.laba1.Tea;
@@ -8,8 +7,6 @@ import ru.eltex.laba2.Credentials;
 import ru.eltex.laba2.Order;
 import ru.eltex.laba2.Orders;
 import ru.eltex.laba2.ShoppingCart;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
 public class Controller {
@@ -52,6 +49,7 @@ public class Controller {
             Orders example1 = manager.readAll();
             System.out.println("Orders из бинарного файла");
             example1.show();
+
 
             System.out.println("Пример работы saveByID и readByID" + "\n" + "==================================================");
 
