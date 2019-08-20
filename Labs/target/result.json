@@ -1,31 +1,41 @@
 {
   "orders": [
     {
-      "id": "91133d3f-fb8b-42eb-ac46-ffeb178d8780",
+      "id": "db3565ed-3a4d-44c0-b580-6477385eb243",
       "cart": {
         "cart": [
           {
             "typeBox": "Целлофан",
-            "ID": "6a1e025c-86c9-47e8-9740-1983749384e6",
+            "ID": "4ac46d23-c4b5-4ffc-8cdc-ff14dbbccbde",
             "Name": "Richard",
-            "price": 144,
-            "counter": 8,
-            "provider": "TME",
+            "price": 127,
+            "counter": 11,
+            "provider": "JFK",
             "country": "Испания"
+          },
+          {
+            "typeBox": "Картон",
+            "ID": "cd1e0394-e263-41c3-a23a-0bc9f43b12d1",
+            "Name": "AhmadTea",
+            "price": 444,
+            "counter": 44,
+            "provider": "KDV",
+            "country": "Индия"
           }
         ],
         "uuids": [
-          "6a1e025c-86c9-47e8-9740-1983749384e6"
+          "cd1e0394-e263-41c3-a23a-0bc9f43b12d1",
+          "4ac46d23-c4b5-4ffc-8cdc-ff14dbbccbde"
         ]
       },
       "user": {
-        "ID": "fbe4b479-87ed-4edd-8d6d-59ed0fb421e8",
+        "ID": "6f55de5c-eb17-4a3b-a1b5-8d6e8951babb",
         "Surname": "Булатов",
         "FirstName": "Александр",
         "Secondname": "Сергеевич",
         "email": "scrubi.memo@yandex.ru"
       },
-      "dateCreate": "авг. 14, 2019",
+      "dateCreate": "авг. 20, 2019",
       "timeWaiting": 1,
       "status": "WAITING",
       "address": "127.0.0.1",
@@ -33,32 +43,42 @@
     }
   ],
   "dateOrder": {
-    "2019-08-14": {
-      "id": "91133d3f-fb8b-42eb-ac46-ffeb178d8780",
+    "2019-08-20": {
+      "id": "db3565ed-3a4d-44c0-b580-6477385eb243",
       "cart": {
         "cart": [
           {
             "typeBox": "Целлофан",
-            "ID": "6a1e025c-86c9-47e8-9740-1983749384e6",
+            "ID": "4ac46d23-c4b5-4ffc-8cdc-ff14dbbccbde",
             "Name": "Richard",
-            "price": 144,
-            "counter": 8,
-            "provider": "TME",
+            "price": 127,
+            "counter": 11,
+            "provider": "JFK",
             "country": "Испания"
+          },
+          {
+            "typeBox": "Картон",
+            "ID": "cd1e0394-e263-41c3-a23a-0bc9f43b12d1",
+            "Name": "AhmadTea",
+            "price": 444,
+            "counter": 44,
+            "provider": "KDV",
+            "country": "Индия"
           }
         ],
         "uuids": [
-          "6a1e025c-86c9-47e8-9740-1983749384e6"
+          "cd1e0394-e263-41c3-a23a-0bc9f43b12d1",
+          "4ac46d23-c4b5-4ffc-8cdc-ff14dbbccbde"
         ]
       },
       "user": {
-        "ID": "fbe4b479-87ed-4edd-8d6d-59ed0fb421e8",
+        "ID": "6f55de5c-eb17-4a3b-a1b5-8d6e8951babb",
         "Surname": "Булатов",
         "FirstName": "Александр",
         "Secondname": "Сергеевич",
         "email": "scrubi.memo@yandex.ru"
       },
-      "dateCreate": "авг. 14, 2019",
+      "dateCreate": "авг. 20, 2019",
       "timeWaiting": 1,
       "status": "WAITING",
       "address": "127.0.0.1",

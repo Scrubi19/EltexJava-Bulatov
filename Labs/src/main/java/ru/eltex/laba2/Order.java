@@ -17,6 +17,8 @@ public class Order implements Serializable {
     private InetAddress address;
     private int port;
 
+    public Order() {
+    }
 
     public Order(ShoppingCart Cart, Credentials User) {
         this.id = UUID.randomUUID();
@@ -69,6 +71,15 @@ public class Order implements Serializable {
         } else
             return false;
     }
+
+    public ShoppingCart getCart() {
+        return cart;
+    }
+
+    public Credentials getUser() {
+        return user;
+    }
+
     public void show() {
         System.out.println("Ваш заказ");
         cart.show();

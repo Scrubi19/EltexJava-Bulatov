@@ -1,13 +1,14 @@
 package ru.eltex.laba2;
 
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.sql.Date;
 import java.util.*;
 
 public class Orders <T extends Order> implements Serializable {
 
-    public LinkedList<T> orders;
-    private HashMap<Date, T> dateOrder;
+    public List<T> orders;
+    private Map<Date, T> dateOrder;
 
     public Orders() {
         this.orders = new LinkedList<T>();
@@ -31,8 +32,16 @@ public class Orders <T extends Order> implements Serializable {
         Order order = new Order(cart, user);
         orders.add((T) order);
         dateOrder.put(order.getDateCreate(), (T) order);
-        //cart.show_short();
+    }
 
+    public void offer(ShoppingCart cart, Credentials credentials, InetAddress address, int port) {
+        Order order = new Order(cart, credentials, address, port);
+        orders.add((T) order);
+        dateOrder.put(order.getDateCreate(), (T) order);
+    }
+
+    public List<T> getList() {
+        return orders;
     }
 
     public void checkTime() {
@@ -43,7 +52,7 @@ public class Orders <T extends Order> implements Serializable {
                 if (order.getStatus() == OrderStatus.WAITING &&
                         order.checkInterval(System.currentTimeMillis())) {
                     order.setStatus(OrderStatus.DONE);
-                    System.out.println("Проверка заказа...");
+                    System.out.println("Checking orders...");
                 }
             }
         }
@@ -55,7 +64,7 @@ public class Orders <T extends Order> implements Serializable {
                 Order order = (Order) it.next();
                 if (order.getStatus() == OrderStatus.DONE) {
                     it.remove();
-                    System.out.println("Удаление заказа");
+                    System.out.println("Remove orders");
                 }
             }
         }

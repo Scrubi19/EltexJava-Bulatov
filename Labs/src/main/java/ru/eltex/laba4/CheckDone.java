@@ -1,21 +1,24 @@
 package ru.eltex.laba4;
-import ru.eltex.laba2.Orders;
 
+import ru.eltex.laba2.Orders;
 
 public class CheckDone extends ACheck {
 
-    CheckDone(Orders orders) {
+    public CheckDone(Orders orders) {
         super(orders);
     }
 
     public CheckDone(Orders orders, long pause) {
         super(orders);
-        this.pause = pause;
+    }
+
+    public void off() {
+        this.fRun = false;
     }
 
     @Override
     public void run() {
-        while(fRun) {
+        while (fRun) {
             synchronized (orders) {
                 getOrders().checkDone();
             }
