@@ -21,6 +21,7 @@ public class ClientMain {
         this.user = user;
         this.orders = orders;
         this.acceptport = 0;
+
     }
 
     public static void main(String[] args) throws IOException {
@@ -53,8 +54,8 @@ public class ClientMain {
         }
         byte[] data = pack.getData();
         String s = new String(data, 0, pack.getLength());
-        System.out.println("Порт из оповещения UDP: " + s);
         portTCP = Integer.parseInt(s);
+        System.out.println("Порт из оповещения UDP: " + portTCP);
         address = pack.getAddress();
         socket.close();
     }
@@ -63,8 +64,12 @@ public class ClientMain {
         Socket socket = new Socket(address, portTCP);
         try (ObjectOutputStream outStream = new ObjectOutputStream(socket.getOutputStream())) {
             outStream.writeObject(orders);
+            outStream.flush();
+            acceptport = socket.getLocalPort();
+            outStream.flush();
             System.out.println("Localport: "+socket.getLocalPort());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
     }
 }

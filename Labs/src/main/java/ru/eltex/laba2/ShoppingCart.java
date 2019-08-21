@@ -32,4 +32,11 @@ public class ShoppingCart <T extends Product> implements Serializable {
     public boolean isExistsUUID(UUID id) {
         return uuids.contains(id);
     }
+
+    public void showShort() {
+        for(T val: cart) {
+            System.out.println(val.Name+"("+val.price+") - "+ val.country);
+        }
+
+    }
 }

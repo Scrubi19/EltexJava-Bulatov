@@ -28,4 +28,7 @@ public class Credentials implements Serializable {
         System.out.println("Email = " +email);
     }
 
+    public void showShort() {
+        System.out.println(Surname+" "+FirstName+"("+email+")");
+    }
 }

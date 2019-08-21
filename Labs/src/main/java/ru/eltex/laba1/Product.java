@@ -9,11 +9,11 @@ import java.util.UUID;
 public abstract class Product implements IcrudAction, Serializable {
 
     UUID ID;
-    protected String Name;
-    protected int price;
-    protected int counter;
-    protected String provider;
-    protected String country;
+    public String Name;
+    public int price;
+    public int counter;
+    public String provider;
+    public String country;
 
     public static int CounterObject;
 

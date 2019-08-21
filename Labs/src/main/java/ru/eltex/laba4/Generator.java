@@ -52,16 +52,16 @@ public class Generator extends ACheck {
                 orders.offer(cart, user);
             }
 
-            if (fWaiting) {
-                try {
-                    synchronized (this) {
-                        wait();
-                        fWaiting=false;
-                    }
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
-                }
-            }
+//            if (fWaiting) {
+//                try {
+//                    synchronized (this) {
+//                        wait();
+//                        fWaiting=false;
+//                    }
+//                } catch (InterruptedException ex) {
+//                    ex.printStackTrace();
+//                }
+//            }
         }
         try {
             Thread.sleep(pause);

@@ -92,4 +92,8 @@ public class Order implements Serializable {
         return this.id;
     }
 
+    public void showShort() {
+        cart.showShort();
+        user.showShort();
+    }
 }

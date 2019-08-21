@@ -76,6 +76,12 @@ public class Orders <T extends Order> implements Serializable {
            order.show();
        }
     }
+    public void showShort() {
+        for(T order: orders) {
+            System.out.println("----------------------------");
+            order.showShort();
+        }
+    }
 }
 
 

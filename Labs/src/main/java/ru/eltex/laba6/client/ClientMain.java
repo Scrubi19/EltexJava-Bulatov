@@ -24,7 +24,6 @@ public class ClientMain {
     private ClientMain(Credentials user, Orders orders) {
         this.user = user;
         this.orders = orders;
-        this.acceptport = 0;
     }
 
     public void getPortUDP() {
@@ -75,7 +74,7 @@ public class ClientMain {
             outputStream.writeObject(orders);
             outputStream.flush();
 
-//            acceptport = ;////////////////////////////////
+            acceptport = socket.getLocalPort();
             outputStream.writeInt(acceptport);
             outputStream.flush();
 
