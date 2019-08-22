@@ -52,6 +52,16 @@ public class Order implements Serializable {
         this.address = address;
         this.port = port;
     }
+    public Order(ShoppingCart<?> cart, Credentials user, InetAddress address) {
+        this.id = UUID.randomUUID();
+        this.status = OrderStatus.WAITING;
+        this.dateCreate = new Date(System.currentTimeMillis());
+        this.timeWaiting = 1;
+
+        this.cart = cart;
+        this.user = user;
+        this.address = address;
+    }
 
     public Date getDateCreate() {
         return dateCreate;

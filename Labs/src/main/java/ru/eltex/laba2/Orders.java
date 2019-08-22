@@ -39,6 +39,11 @@ public class Orders <T extends Order> implements Serializable {
         orders.add((T) order);
         dateOrder.put(order.getDateCreate(), (T) order);
     }
+    public void offer(ShoppingCart cart, Credentials credentials, InetAddress address) {
+        Order order = new Order(cart, credentials, address);
+        orders.add((T) order);
+        dateOrder.put(order.getDateCreate(), (T) order);
+    }
 
     public List<T> getList() {
         return orders;
@@ -76,12 +81,14 @@ public class Orders <T extends Order> implements Serializable {
            order.show();
        }
     }
-    public void showShort() {
-        for(T order: orders) {
-            System.out.println("----------------------------");
-            order.showShort();
-        }
-    }
+
+//    public void showShort() {
+//        Iterator <Order> itr = (Iterator<Order>) orders.iterator();
+//        while(itr.hasNext()) {
+//            System.out.println("----------------------------");
+//            itr.
+//        }
+//    }
 }
 
 

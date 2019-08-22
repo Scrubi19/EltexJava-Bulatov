@@ -7,12 +7,14 @@ public class UDP extends Thread {
     private byte[] buffer;
     private String address;
     private int localePort;
+    private int reserveport;
     private volatile boolean fRun;
 
-    public UDP(Integer portTransfer, String address, int port) {
+    public UDP(Integer portTransfer, String address, int port1, int port2) {
         this.buffer = portTransfer.toString().getBytes();
         this.address = address;
-        this.localePort = port;
+        this.localePort = port1;
+        this.reserveport = port2;
         this.fRun = true;
     }
 
@@ -25,8 +27,10 @@ public class UDP extends Thread {
         super.run();
         while(fRun) {
             try (DatagramSocket datagram = new DatagramSocket()) {
-                DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName(address), localePort);
-                datagram.send(packet);
+                DatagramPacket packet1 = new DatagramPacket(buffer, buffer.length, InetAddress.getByName(address), localePort);
+                datagram.send(packet1);
+                DatagramPacket packet2 = new DatagramPacket(buffer, buffer.length, InetAddress.getByName(address), reserveport);
+                datagram.send(packet2);
             } catch (SocketException ex) {
                 ex.printStackTrace();
             } catch (IOException e) {
