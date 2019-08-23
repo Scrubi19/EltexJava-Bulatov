@@ -13,14 +13,15 @@ public class ClientMain {
     private Credentials user;
     private Orders orders;
 
-    private static final int PORT = 9999;
-    private static final int CONFIRMPORT = 8888;
+    private int port;
+    private static final int CONFIRMPORT = 7777;
     private int acceptport;
     private int portTCP;
     private InetAddress address;
     private DatagramSocket socket;
 
-    private ClientMain(Credentials user, Orders orders) {
+    private ClientMain(Credentials user, Orders orders, int port) {
+        this.port = port;
         this.user = user;
         this.orders = orders;
         this.acceptport = 0;
@@ -32,14 +33,13 @@ public class ClientMain {
         Generator generator = new Generator(user, orders);
         generator.start();
 
-        ClientMain client = new ClientMain(user, orders);
+        ClientMain client = new ClientMain(user, orders, 9991);
 
         while(true) {
-            System.out.println("---------------------");
+            System.out.println("-------------------------------");
             client.ReceiverAlertUDP();
             client.ConnectTCP();
             client.AcceptAlertUDP();
-
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -51,7 +51,7 @@ public class ClientMain {
     public void ReceiverAlertUDP() {
         DatagramPacket pack = new DatagramPacket(new byte[1024], 1024);
         try {
-            socket = new DatagramSocket(PORT);
+            socket = new DatagramSocket(this.port);
         } catch (SocketException e) {
             e.printStackTrace();
         }
@@ -63,7 +63,7 @@ public class ClientMain {
         }
         byte[] data = pack.getData();
         String s = new String(data, 0, pack.getLength());
-        portTCP = Integer.parseInt(s);
+        this.portTCP = Integer.parseInt(s);
         System.out.println("Порт из оповещения UDP: " + portTCP);
         address = pack.getAddress();
         socket.close();
@@ -74,7 +74,7 @@ public class ClientMain {
             DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             ObjectOutputStream outStream = new ObjectOutputStream(dos);
             this.acceptport = socket.getLocalPort();
-            System.out.println("Localport: " + acceptport);
+            System.out.println("LocalePort: " + acceptport);
             outStream.writeObject(orders);
             outStream.flush();
 

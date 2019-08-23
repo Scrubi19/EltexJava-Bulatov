@@ -73,7 +73,7 @@ public class Orders <T extends Order> implements Serializable {
                 if (order.getStatus() == OrderStatus.WAITING &&
                         order.checkInterval(System.currentTimeMillis())) {
                     order.setStatus(OrderStatus.DONE);
-                    UDP udp = new UDP(order.getDateCreate(),"127.0.0.255", 8888);
+                    UDP udp = new UDP(order.getDateCreate(),"127.0.0.255", 7777);
                     udp.start();
                     System.out.println("Checking orders...");
                 }

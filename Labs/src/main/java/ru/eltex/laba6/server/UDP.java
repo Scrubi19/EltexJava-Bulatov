@@ -22,6 +22,11 @@ public class UDP extends Thread {
         this.localePort = port1;
         this.fRun = true;
     }
+    public UDP(Date date, String address) {
+        this.buffer = date.toString().getBytes();
+        this.address = address;
+        this.fRun = true;
+    }
 
     public void Off() {
         fRun = false;
