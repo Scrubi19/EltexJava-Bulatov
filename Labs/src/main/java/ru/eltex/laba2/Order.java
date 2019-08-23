@@ -45,7 +45,7 @@ public class Order implements Serializable {
         this.id = UUID.randomUUID();
         this.status = OrderStatus.WAITING;
         this.dateCreate = new Date(System.currentTimeMillis());
-        this.timeWaiting = 1;
+        this.timeWaiting = 10;
 
         this.cart = cart;
         this.user = user;

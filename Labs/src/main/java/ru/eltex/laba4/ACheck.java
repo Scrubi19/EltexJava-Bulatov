@@ -15,7 +15,7 @@ abstract public class ACheck extends Thread {
         this.user = user;
         this.orders = orders;
     }
-    ACheck(Orders orders) {
+    public ACheck(Orders orders) {
         this.orders = orders;
     }
 

@@ -42,7 +42,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ru.eltex.laba6_1.server.ServerMain</mainClass>
+                            <mainClass>ru.eltex.laba6.server.ServerMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

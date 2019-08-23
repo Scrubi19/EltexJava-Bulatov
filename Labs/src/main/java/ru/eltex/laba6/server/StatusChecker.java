@@ -1,18 +1,23 @@
-package ru.eltex.laba4;
+package ru.eltex.laba6.server;
 
 import ru.eltex.laba2.Orders;
+import ru.eltex.laba4.ACheck;
 
-public class CheckTime extends ACheck {
+import java.net.Socket;
 
-    public CheckTime(Orders orders) {
+public class StatusChecker extends ACheck {
+
+    Socket socket;
+
+    public StatusChecker(Orders orders) {
         super(orders);
     }
 
-    public CheckTime(Orders orders, long pause) {
+    public StatusChecker(Orders orders, Socket socket, long pause) {
         super(orders);
         this.pause = pause;
+        this.socket = socket;
     }
-
     public void off() {
         this.fRun = false;
     }
@@ -21,8 +26,8 @@ public class CheckTime extends ACheck {
     public void run() {
         while (fRun) {
             synchronized (orders) {
-                getOrders().checkTime();
-                getOrders().show();
+                getOrders().StatusAlert();
+
             }
             try {
                 Thread.sleep(pause);
@@ -33,3 +38,4 @@ public class CheckTime extends ACheck {
 
     }
 }
+

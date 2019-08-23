@@ -1,5 +1,7 @@
 package ru.eltex.laba2;
 
+import ru.eltex.laba6.server.UDP;
+
 import java.io.Serializable;
 import java.net.InetAddress;
 import java.sql.Date;
@@ -9,6 +11,7 @@ public class Orders <T extends Order> implements Serializable {
 
     public List<T> orders;
     private Map<Date, T> dateOrder;
+    public int port;
 
     public Orders() {
         this.orders = new LinkedList<T>();
@@ -62,6 +65,21 @@ public class Orders <T extends Order> implements Serializable {
             }
         }
     }
+    public void StatusAlert() {
+        synchronized(orders) {
+            Iterator it = orders.iterator();
+            while(it.hasNext()) {
+                Order order = (Order) it.next();
+                if (order.getStatus() == OrderStatus.WAITING &&
+                        order.checkInterval(System.currentTimeMillis())) {
+                    order.setStatus(OrderStatus.DONE);
+                    UDP udp = new UDP(order.getDateCreate(),"127.0.0.255", 8888);
+                    udp.start();
+                    System.out.println("Checking orders...");
+                }
+            }
+        }
+    }
     public void checkDone() {
         synchronized (orders) {
             Iterator it = orders.iterator();
@@ -82,13 +100,6 @@ public class Orders <T extends Order> implements Serializable {
        }
     }
 
-//    public void showShort() {
-//        Iterator <Order> itr = (Iterator<Order>) orders.iterator();
-//        while(itr.hasNext()) {
-//            System.out.println("----------------------------");
-//            itr.
-//        }
-//    }
 }
 
 
