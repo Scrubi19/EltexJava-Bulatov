@@ -1,13 +1,6 @@
 # Compiled class file
 *.class
 
-/Laba1/.idea
-/Laba2/.idea
-/Laba3/.idea
-/Laba4/.idea
-/Labs/.idea
-root/.idea/
-
 # Log file
 *.log
 
