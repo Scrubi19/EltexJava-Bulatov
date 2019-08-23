@@ -15,6 +15,7 @@ public class ServerMain {
         try (ServerSocket serverSocket = new ServerSocket(PORTTCP)) {
             while (true) {
                 Socket s = serverSocket.accept();
+                System.out.println("Поток создан");
                 ServerConnectionProcessor p = new ServerConnectionProcessor(s);
                 p.start();
             }

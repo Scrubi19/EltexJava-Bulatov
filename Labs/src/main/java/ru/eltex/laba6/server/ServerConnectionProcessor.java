@@ -1,5 +1,6 @@
 package ru.eltex.laba6.server;
 
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import ru.eltex.laba2.Orders;
 
 import java.io.DataInputStream;
@@ -21,8 +22,9 @@ class ServerConnectionProcessor extends Thread {
             // Получает запрос
             ObjectInputStream inStream = new ObjectInputStream(dis);
             Orders new_orders = (Orders) inStream.readObject();
-
             orders = new_orders;
+            System.out.println("Содержимое Orders на сервере:");
+            orders.show();
 
         } catch (IOException e) {
             e.printStackTrace();

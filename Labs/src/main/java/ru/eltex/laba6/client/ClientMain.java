@@ -35,6 +35,7 @@ public class ClientMain {
         ClientMain client = new ClientMain(user, orders);
 
         while(true) {
+            System.out.println("---------------------");
             client.ReceiverAlertUDP();
             client.ConnectTCP();
             client.AcceptAlertUDP();
