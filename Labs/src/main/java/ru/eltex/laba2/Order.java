@@ -7,6 +7,8 @@ import java.util.UUID;
 public class Order implements Serializable {
 
     private UUID id;
+    private int ID = 0;
+
     private ShoppingCart cart;
     private Credentials user;
 
@@ -22,6 +24,7 @@ public class Order implements Serializable {
 
     public Order(ShoppingCart Cart, Credentials User) {
         this.id = UUID.randomUUID();
+        this.ID = (int) ( Math.random() * 20 );
         this.cart = Cart;
         this.user = User;
         this.status = OrderStatus.WAITING;
@@ -39,6 +42,12 @@ public class Order implements Serializable {
         this.timeWaiting = diff;
         this.cart = cart;
         this.user = user;
+    }
+    public int getID() {
+        return ID;
+    }
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public Order(ShoppingCart<?> cart, Credentials user, InetAddress address, int port) {

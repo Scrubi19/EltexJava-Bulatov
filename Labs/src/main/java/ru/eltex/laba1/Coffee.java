@@ -19,9 +19,8 @@ public class Coffee extends Product {
         this.grainType = "";
     }
 
-    Coffee(UUID Id, String name, String provider, String country, int price, int counter, String graintype) {
+    public Coffee(String name, String provider, String country, int price, int counter, String graintype) {
         CounterObject++;
-        this.ID = Id;
         this.Name = name;
         this.provider = provider;
         this.country = country;

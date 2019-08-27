@@ -33,6 +33,7 @@ public class Orders <T extends Order> implements Serializable {
 
     public void offer(ShoppingCart cart, Credentials user){
         Order order = new Order(cart, user);
+
         orders.add((T) order);
         dateOrder.put(order.getDateCreate(), (T) order);
     }
@@ -50,6 +51,34 @@ public class Orders <T extends Order> implements Serializable {
 
     public List<T> getList() {
         return orders;
+    }
+
+    public T searchById(String id) {
+        var iter = dateOrder.values().iterator();
+        int i = Integer.parseInt(id.trim());
+
+        while (iter.hasNext()) {
+            var item = iter.next();
+            if (i == item.getID()) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public ShoppingCart getCart(String id) {
+        var iter = dateOrder.values().iterator();
+        int i = Integer.parseInt(id.trim());
+
+        while (iter.hasNext()) {
+            var item = iter.next();
+            System.out.println("CartID"+item.getID());
+            if (i == item.getID()) {
+                System.out.println("ragre");
+                return item.getCart();
+            }
+        }
+        return null;
     }
 
     public void checkTime() {
@@ -99,6 +128,21 @@ public class Orders <T extends Order> implements Serializable {
            order.show();
        }
     }
+
+    public void remove(String id) {
+        var iter = dateOrder.values().iterator();
+        int i = Integer.parseInt(id.trim());
+
+        while (iter.hasNext()) {
+            var item = iter.next();
+            if (i == item.getID()) {
+                iter.remove();
+                orders.remove(item);
+                return;
+            }
+        }
+    }
+
 
 }
 

@@ -6,10 +6,12 @@ import java.util.*;
 
 public class ShoppingCart <T extends Product> implements Serializable {
 
+    private UUID CartID;
     private List<T> cart;
     private Set<UUID> uuids;
 
     public ShoppingCart() {
+        this.CartID = UUID.randomUUID();
         this.cart = new LinkedList<>();
         this.uuids = new HashSet<>();
     }
@@ -38,5 +40,9 @@ public class ShoppingCart <T extends Product> implements Serializable {
             System.out.println(val.Name+"("+val.price+") - "+ val.country);
         }
 
+    }
+
+    public UUID getID() {
+        return CartID;
     }
 }

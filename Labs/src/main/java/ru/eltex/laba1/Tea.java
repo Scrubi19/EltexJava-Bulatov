@@ -19,10 +19,9 @@ public class Tea extends Product{
         this.counter = 0;
         this.typeBox = "";
     }
-
-    Tea(UUID Id, String name, String provider, String country, int price, int counter, String typeBox) {
+    public Tea(String name, String provider, String country, int price, int counter, String typeBox) {
         CounterObject++;
-        this.ID = Id;
+        ID =  UUID.randomUUID();
         this.Name = name;
         this.provider = provider;
         this.country = country;

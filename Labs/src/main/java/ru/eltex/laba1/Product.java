@@ -1,5 +1,7 @@
 package ru.eltex.laba1;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.Random;
