@@ -3,6 +3,13 @@
 *.iml
 .idea
 Labs/.idea
+Labs/.gradle
+Labs/gradle
+Labs/build
+Labs/gradlew
+Labs/gradlew.bat
+Labs/setting.gradle
+
 target
 
 # Log file
