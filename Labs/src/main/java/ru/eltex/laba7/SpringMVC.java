@@ -24,10 +24,8 @@ public class SpringMVC {
         cart1.add(new Tea("Nestea", "KDV", "Ukraine", 122, 15, "Фольга"));
         cart1.add(new Tea("Lipton", "HZ", "Italy", 150, 17, "Картон"));
 
-
         cart2.add(new Coffee("Nescafe", "KDV", "India", 120, 10, "Arabic"));
         cart2.add(new Tea("Jockey", "Nestlea", "Britain", 130, 13, "Робуста"));
-
 
         Orders orders = (Orders) enter.getBean("Orders");
         orders.offer(cart1, (Credentials) enter.getBean("User"));
@@ -37,6 +35,7 @@ public class SpringMVC {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        
         orders.offer(cart2, (Credentials) enter.getBean("User"));
     }
 
