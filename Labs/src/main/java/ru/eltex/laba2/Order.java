@@ -24,7 +24,7 @@ public class Order implements Serializable {
 
     public Order(ShoppingCart Cart, Credentials User) {
         this.id = UUID.randomUUID();
-        this.ID = (int) ( Math.random() * 20 );
+        this.ID = (int) ( Math.random() * 10 );
         this.cart = Cart;
         this.user = User;
         this.status = OrderStatus.WAITING;

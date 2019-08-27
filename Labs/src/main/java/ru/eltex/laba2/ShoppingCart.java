@@ -41,8 +41,4 @@ public class ShoppingCart <T extends Product> implements Serializable {
         }
 
     }
-
-    public UUID getID() {
-        return CartID;
-    }
 }

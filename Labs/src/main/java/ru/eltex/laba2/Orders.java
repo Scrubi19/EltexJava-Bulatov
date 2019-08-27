@@ -72,9 +72,7 @@ public class Orders <T extends Order> implements Serializable {
 
         while (iter.hasNext()) {
             var item = iter.next();
-            System.out.println("CartID"+item.getID());
             if (i == item.getID()) {
-                System.out.println("ragre");
                 return item.getCart();
             }
         }
